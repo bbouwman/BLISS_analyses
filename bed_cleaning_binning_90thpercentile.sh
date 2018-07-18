@@ -8,7 +8,7 @@
 # 				2. Create one line for each UMI-DSB reported, with a max of 100 per location.
 # 				3. Generate BED file with 2 additional columns (0 and +)
 # 				4. Bedtools Intersect: DSB count per 1kb bin. 
-#						! You need a prebinned genome [Bedtools makewindows]
+#						! You need a prebinned genome [bedtools makewindows]
 # 				5. Remove all windows without breaks (zeroes).
 # 				6. Perform statistics with 'sta', find 90th percentile.
 # 				7. Filter for those windows that belong to the 90th percentile (top 10%.  
