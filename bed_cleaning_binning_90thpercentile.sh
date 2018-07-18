@@ -68,5 +68,6 @@ echo "90th percentile cutoff for UMI-DSBs per 1kb window will be set at >=" $p90
 
 # Now use the p90 cut-off to filter the windows and keep only the top 10% most broken windows. 
 cat $outdata"/"$experiment"_DSBsin1kbbins.txt" | awk -v threshold=$p90 '{if($5 >= threshold) {print $0}}' > $outdata"/"$experiment"_90thpercentile_mostbroken.txt"
-echo "Created in outdata:" $experiment"_90thpercentile_mostbroken.txt"
+cat $outdata"/"$experiment"_90thpercentile_mostbroken.txt" | awk '{print $1 "\t" $2 "\t" $3 "\t" $5 "\t0\t+"}' > $outdata"/"$experiment"_90thpercentile_mostbroken.bed"
+echo "Created in outdata:" $experiment"_90thpercentile_mostbroken.txt and a BED file with the same name"
 
